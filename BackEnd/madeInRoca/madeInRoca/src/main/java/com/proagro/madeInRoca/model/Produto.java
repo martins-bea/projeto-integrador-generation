@@ -21,25 +21,40 @@ public class Produto {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	
+
 	@NotNull
 	@Size(min = 4, max = 20)
 	private String nome;
-	
+
 	@NotNull
 	@Digits(integer = 5, fraction = 2)
 	private BigDecimal preco;
 
 	@NotNull
-	@Size(max = 100)
-	private String fornecedor;
-	
-	@NotNull
 	private int qtdeEstoque;
-	
+
 	@ManyToOne
 	@JsonIgnoreProperties("produto")
 	private Categoria categoria;
+
+	@ManyToOne
+	@JsonIgnoreProperties("produto")
+	private Usuario usuario;
+
+	@NotNull
+	private String foto;
+	
+	@NotNull
+	@Size(max = 255)
+	private String descricao;
+
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
 
 	public long getId() {
 		return id;
@@ -65,14 +80,6 @@ public class Produto {
 		this.preco = preco;
 	}
 
-	public String getFornecedor() {
-		return fornecedor;
-	}
-
-	public void setFornecedor(String fornecedor) {
-		this.fornecedor = fornecedor;
-	}
-
 	public int getQtdeEstoque() {
 		return qtdeEstoque;
 	}
@@ -88,8 +95,21 @@ public class Produto {
 	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
 	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
 	
-	
-	
-	
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+
 }

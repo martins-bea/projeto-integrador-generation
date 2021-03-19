@@ -1,0 +1,320 @@
+<!-- PRODUTO INDIVIDUAL -->
+<div class="container py-5 mt-5" style="background-color: #e9ecef;">
+  <div class="row produto-unico d-flex justify-content-center align-items-center">
+    <div class="col-md-4 product-single">
+      <img class="img-fluid img-product-single" src="{{produto.foto}}"
+        alt="{{produto.nome}} sendo vendido em nosso e-commerce">
+    </div>
+    <div class="col-md-6  d-flex flex-column">
+      <h5 class="my-3" style="font-size: 30px;">{{produto.nome}}</h5>
+      <h5 class="visually-hidden">R$ {{produto.preco | number: '1.2-2'}}</h5>
+      <div class="comprar-qnt my-3 d-flex justify-content-start align-items-center">
+        <div class="form-group my-auto mr-2">
+          <input [(ngModel)]="qtdProduto" class="form-control" min="0" value="1" type="number" name="qtdProduto"
+            id="qtdProduto" placeholder="Quantidade">
+        </div>
+        <ng-container *ngIf="userTokin != ''; else elseComprar">
+          <button type="button" class="btn btn-comprar" style="height: 42px;" data-toggle="modal"
+            data-target="#modalComprar" (click)="postCestaProdutos()">Comprar</button>
+        </ng-container>
+        <ng-template #elseComprar>
+          <button type="button" class="btn btn-comprar" style="height: 42px;" data-toggle="modal"
+            data-target="#modalComprarNegado">Comprar</button>
+        </ng-template>
+      </div>
+      <p class="text-justify">{{produto.descricao}}
+      </p>
+    </div>
+  </div>
+</div>
+<!-- /PRODUTO INDIVIDUAL -->
+
+
+
+
+<!-- CAROUSEL DE PRODUTOS -->
+<div class="container mt-5">
+  <div class="row mt-0 d-flex justify-content-center align-items-center">
+    <div class="col-12 mb-1 ">
+      <h3 class="mb-0 px-4 py-2 pro text-center color-green">Promoções do dia </h3>
+    </div>
+    <div class="col-12 d-flex justify-content-center align-items-center">
+      <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row mb-3 mx-3 d-flex justify-content-center align-items-center">
+              <!--Cards-->
+              <div class="m-3 align-items-center justify-content-center mt-1 d-flex">
+                <div class="card efeitoFruta" style="width: 14rem;">
+                  <img class="card-img-top w-100"
+                    src="https://saborvivo.com.br/wp-content/uploads/2019/05/uva-thompson-2.jpg"
+                    alt="Produto em Promoção">
+                  <div class="card-body">
+                    <h5 class="card-title">Uva Itália</h5>
+                    <div class="mb-2">
+                      <p class="card-text negrito"> R$2.50</p>
+                    </div>
+                    <div class="qtd-buy d-flex align-items-center justify-content-center">
+                      <button type="button" data-toggle="modal" data-target="#modalDemonstrativo"
+                        class="btn btn-comprar-carousel" style="height: 42px; width: 182px">
+                        Comprar
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--/Cards-->
+              <!--Cards-->
+              <div class="m-3 align-items-center justify-content-center mt-1 d-flex">
+                <div class="card efeitoFruta" style="width: 14rem;">
+                  <img class="card-img-top w-100"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJlvDLUBJYfOLyg5zZVgbhvir3mGR6PTzIYQ&usqp=CAU"
+                    alt="Produto em Promoção">
+                  <div class="card-body">
+                    <h5 class="card-title">Pimentão</h5>
+                    <div class="mb-2">
+                      <p class="card-text negrito"> R$2.50</p>
+                    </div>
+                    <div class="qtd-buy d-flex align-items-center justify-content-center">
+                      <button type="button" data-toggle="modal" data-target="#modalDemonstrativo"
+                        class="btn btn-comprar-carousel" style="height: 42px; width: 182px">
+                        Comprar
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--/Cards-->
+              <!--Cards-->
+              <div class="m-3 align-items-center justify-content-center mt-1 d-flex">
+                <div class="card efeitoFruta" style="width: 14rem;">
+                  <img class="card-img-top w-100"
+                    src="https://static3.tcdn.com.br/img/img_prod/450860/muda_de_limao_taiti_enxertada_546_1_20190611093557.jpg"
+                    alt="Produto em Promoção">
+                  <div class="card-body">
+                    <h5 class="card-title">Limão Tahiti</h5>
+                    <div class="mb-2">
+                      <p class="card-text negrito"> R$2.50</p>
+                    </div>
+                    <div class="qtd-buy d-flex align-items-center justify-content-center">
+                      <button type="button" data-toggle="modal" data-target="#modalDemonstrativo"
+                        class="btn btn-comprar-carousel" style="height: 42px; width: 182px">
+                        Comprar
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--/Cards-->
+              <!--Cards-->
+              <div class="m-3 align-items-center justify-content-center mt-1 d-flex">
+                <div class="card efeitoFruta" style="width: 14rem;">
+                  <img class="card-img-top w-100" src="https://i.imgur.com/G6t3XF4.jpg" alt="Produto em Promoção">
+                  <div class="card-body">
+                    <h5 class="card-title">Berinjela</h5>
+                    <div class="mb-2">
+                      <p class="card-text negrito"> R$2.50</p>
+                    </div>
+                    <div class="qtd-buy d-flex align-items-center justify-content-center">
+                      <button type="button" data-toggle="modal" data-target="#modalDemonstrativo"
+                        class="btn btn-comprar-carousel" style="height: 42px; width: 182px">
+                        Comprar
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--/Cards-->
+              <!--COMECA AQUI-->
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row mb-3 mx-3 d-flex justify-content-center align-items-center">
+              <!--Cards-->
+              <div class="m-3 align-items-center justify-content-center mt-1 d-flex">
+                <div class="card efeitoFruta" style="width: 14rem;">
+                  <img class="card-img-top w-100"
+                    src="https://www.proativaalimentos.com.br/image/cache/catalog/img_prod/cenoura2-1000x1000.jpg"
+                    alt="Produto em Promoção">
+                  <div class="card-body">
+                    <h5 class="card-title">Cenoura</h5>
+                    <div class="mb-2">
+                      <p class="card-text negrito"> R$2.50</p>
+                    </div>
+                    <div class="qtd-buy d-flex align-items-center justify-content-center">
+                      <button type="button" data-toggle="modal" data-target="#modalDemonstrativo"
+                        class="btn btn-comprar-carousel" style="height: 42px; width: 182px">
+                        Comprar
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--/Cards-->
+              <!--Cards-->
+              <div class="m-3 align-items-center justify-content-center mt-1 d-flex">
+                <div class="card efeitoFruta" style="width: 14rem;">
+                  <img class="card-img-top w-100"
+                    src="https://siriusorganicos.com.br/wp-content/uploads/2020/11/maca-gala-importada-organica-produtos-organicos-sirius-delivery-entrega-cesta-curitiba.jpg"
+                    alt="Produto em Promoção">
+                  <div class="card-body">
+                    <h5 class="card-title">Maçã Gala</h5>
+                    <div class="mb-2">
+                      <p class="card-text negrito"> R$2.50</p>
+                    </div>
+                    <div class="qtd-buy d-flex align-items-center justify-content-center">
+                      <button type="button" data-toggle="modal" data-target="#modalDemonstrativo"
+                        class="btn btn-comprar-carousel" style="height: 42px; width: 182px">
+                        Comprar
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--/Cards-->
+              <!--Cards-->
+              <div class="m-3 align-items-center justify-content-center mt-1 d-flex">
+                <div class="card efeitoFruta" style="width: 14rem;">
+                  <img class="card-img-top w-100"
+                    src="https://emporioquatroestrelas.vteximg.com.br/arquivos/ids/160134-1000-1000/alho-roxo.png?v=637285138034270000"
+                    alt="Produto em Promoção">
+                  <div class="card-body">
+                    <h5 class="card-title">Alho</h5>
+                    <div class="mb-2">
+                      <p class="card-text negrito"> R$2.50</p>
+                    </div>
+                    <div class="qtd-buy d-flex align-items-center justify-content-center">
+                      <button type="button" data-toggle="modal" data-target="#modalDemonstrativo"
+                        class="btn btn-comprar-carousel" style="height: 42px; width: 182px">
+                        Comprar
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--/Cards-->
+              <!--Cards-->
+              <div class="m-3 align-items-center justify-content-center mt-1 d-flex">
+                <div class="card efeitoFruta" style="width: 14rem;">
+                  <img class="card-img-top w-100"
+                    src="https://superplanalto.com/image/cache/catalog/produtos/produtos/banana-nanica-550x550w.jpg"
+                    alt="Produto em Promoção">
+                  <div class="card-body">
+                    <h5 class="card-title">Banana Nanica</h5>
+                    <div class="mb-2">
+                      <p class="card-text negrito"> R$2.50</p>
+                    </div>
+                    <div class="qtd-buy d-flex align-items-center justify-content-center">
+                      <button type="button" data-toggle="modal" data-target="#modalDemonstrativo"
+                        class="btn btn-comprar-carousel" style="height: 42px; width: 182px">
+                        Comprar
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--/Cards-->
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev carousel-promo" href="#carouselExampleIndicators2" role="button"
+        data-slide="prev">
+        <span class="carousel-control-prev-icon btn btn-prev" aria-hidden="true"></span>
+        <span class="sr-only">Anterior</span>
+      </a>
+      <a class="carousel-control-next carousel-promo" href="#carouselExampleIndicators2" role="button"
+        data-slide="next">
+        <span class="carousel-control-next-icon btn btn-next" aria-hidden="true"></span>
+        <span class="sr-only">Próximo</span>
+      </a>
+    </div>
+  </div>
+</div>
+<!-- /CAROUSEL DE PRODUTOR -->
+
+<!-- MODAL DE COMPRA -->
+<div class="modal fade" id="modalComprar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body mt-0 mr-0">
+        <button type="button" class="close justify-content-end d-flex" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="d-flex justify-content-center align-items-center flex-column mt-3">
+          <img class="img-fluid" style="max-width: 150px;"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Symbol_OK.svg/1024px-Symbol_OK.svg.png"
+            alt="simbolo de Ok, para indicar que o produto foi adicionado com sucesso ao cesta de compras do site">
+          <h5 class="modal-title" style="font-size: 25px;" id="exampleModalLabel">{{produto.nome}} x {{qtdProduto}}
+            UN
+          </h5>
+          <h5>Total $ {{totalProduto | number: '1.2-2'}}</h5>
+          <p class="text-center">Produto adicionado a sua cesta com sucesso</p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- MODAL DE COMPRA -->
+
+
+<!-- MODAL DE COMPRA NAO LOGADO -->
+<div class="modal fade" id="modalComprarNegado" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body mt-0 mr-0">
+        <button type="button" class="close justify-content-end d-flex" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="d-flex justify-content-center align-items-center flex-column mt-3">
+          <img class="img-fluid" style="max-width: 150px;" src="https://images.emojiterra.com/mozilla/512px/274c.png"
+            alt="simbolo de negação, para indicar que o produto não foi adicionado com sucesso ao cesta de compras do site pelo usuarioo não estar logado">
+          <h5 class="modal-title text-center" style="font-size: 25px;" id="exampleModalLabel">
+            Faça login no site para adicionar produtos em sua cesta
+          </h5>
+          <p class="text-center">Compra não efetuada</p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- MODAL DE COMPRA NAO LOGADO -->
+
+<!-- DEMONSTRATIVO -->
+<div class="modal fade" id="modalDemonstrativo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body mt-0 mr-0">
+        <button type="button" class="close justify-content-end d-flex" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="d-flex justify-content-center align-items-center flex-column mt-3">
+          <img class="img-fluid" style="max-width: 150px;" src="https://images.emojiterra.com/mozilla/512px/274c.png"
+            alt="simbolo de negação, para indicar que o produto não foi adicionado com sucesso ao cesta de compras do site pelo usuarioo não estar logado">
+          <h5 class="modal-title text-center" style="font-size: 25px;" id="exampleModalLabel">
+            Card apenas demonstrativo.
+          </h5>
+          <h5 class="modal-title text-center" id="exampleModalLabel">
+            Acesse a pagina de produtos para vizualizar os produtos disponiveis.
+          </h5>
+          <h5 class="mb-2 text-center">
+            <a routerLink="/login" data-dismiss="modal">clique aqui</a>
+          </h5>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- MODAL DE COMPRA NAO LOGADO -->

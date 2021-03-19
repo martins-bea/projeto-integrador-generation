@@ -1,0 +1,283 @@
+.box-container {
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.text-quemsomos {
+  color: #41581f;
+  font-size: 38px;
+}
+
+.text-quemsomos2 {
+  color: #412c14ef;
+  font-size: 18px;
+}
+
+.btn-sobre {
+  background-color: #aac560;
+  font-weight: 700;
+  color: #1f4e21;
+  opacity: 1;
+  transition: 0.3s;
+}
+
+.btn-sobre:hover {
+  background: rgba(75, 121, 54, 0.795);
+}
+
+.card-svg {
+  height: 75px;
+  padding: 0;
+}
+
+.equipe-e-parceria {
+  background-color: #57732d;
+  color: white;
+}
+
+.equipe-e-parceria h1 {
+  font-size: 48px;
+  position: relative;
+  top: 20px;
+}
+
+.equipe-e-parceria h2 {
+  font-size: 40px;
+}
+
+.equipe-e-parceria svg {
+  height: 150px;
+}
+
+.btn-produtos {
+  position: relative;
+  top: 140px;
+}
+
+.card-produto img {
+  max-width: 100%;
+  transition: 0.7s ease;
+}
+
+.card-produto:hover img {
+  transform: scale(1.2);
+}
+
+.btn-link {
+  color: #fff;
+}
+
+.negrito {
+  font-weight: bold;
+}
+
+.efeitoFruta {
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.efeitoFruta:hover {
+  filter: drop-shadow(10px 10px 5px rgba(0, 0, 0, 0.5));
+}
+
+.promo-icon {
+  max-width: 25px;
+}
+
+.btn-parceria {
+  background: white;
+  color: #4b7936cb;
+  font-weight: bold;
+}
+
+.btn-quemsomos {
+  background: #f5f8f0;
+  color: #4b7936cb;
+  font-weight: bold;
+  border: 1px solid;
+}
+
+.btn-parceria:hover {
+  background: rgb(218, 218, 218);
+}
+
+.btn-quemsomos:hover {
+  background: rgb(218, 218, 218);
+}
+
+.color-green {
+  color: #0e5411;
+}
+
+.fa-arrow-circle-right,
+.fa-arrow-circle-down {
+  font-size: 2rem;
+  color: #0e5411;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.fa-arrow-circle-down {
+  display: none;
+}
+
+.img-como-funciona {
+  align-self: center;
+  height: 12rem;
+}
+
+.card-sobre {
+  background-color: white;
+  border: solid 1px;
+  border-color: #c4c4c4a1;
+  margin: 5px 5px 5px 5px;
+  width: 13rem;
+  height: 21.5rem;
+}
+
+.img-product-single {
+  border: #c4c4c4 solid 1px;
+  border-radius: 5px;
+}
+
+.descricao-produto {
+  font-style: italic;
+  max-width: 600px;
+}
+
+h3 {
+  font-size: 45px;
+}
+
+.svg-equipe-parceria {
+  display: flex;
+}
+
+.carousel-promo {
+  height: 80px;
+  width: auto;
+  position: absolute;
+  top: 30%;
+}
+
+.btn-next,
+.btn-prev {
+  margin-top: 50px;
+  border-radius: 50px;
+  background-color: rgba(202, 195, 195, 0.726);
+}
+
+.form-group {
+  border-radius: 5px;
+}
+
+.text-comofunciona {
+  color: #573c23;
+  font-size: 13pt;
+  margin-top: -20px;
+}
+
+.card-title-comofunciona {
+  font-family: "Indie Flower", cursive;
+  font-size: 25pt;
+  color: #91621def;
+}
+
+.title-comofunciona {
+  color: #91621def;
+  font-size: 20pt;
+}
+
+
+
+.text-promo {
+  color: #91621def;
+  font-size: 20pt;
+}
+
+.btn-comprar {
+  background-color: #57732d;
+  border: solid 2px #57732d;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .cesta-card-img {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .svg-equipe-parceria {
+    display: none;
+  }
+  .como-funciona {
+    flex-direction: column;
+  }
+  .fa-arrow-circle-right {
+    display: none;
+  }
+  .fa-arrow-circle-down {
+    display: block;
+  }
+  .sobre-cards {
+    flex-direction: column;
+  }
+  .fa-arrow-circle-right,
+  .fa-arrow-circle-down {
+    margin: 0;
+  }
+}
+
+@media (max-width: 270) {
+  .div-img img {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+.carousel-promo {
+  height: 80px;
+  width: auto;
+  position: absolute;
+  top: 30%;
+}
+
+.btn-next,
+.btn-prev {
+  border-radius: 50px;
+  background-color: rgba(202, 195, 195, 0.726);
+}
+
+.form-group {
+  border-radius: 5px;
+}
+
+.btn-comprar-carousel {
+  background-color: #57732d;
+  border: solid 2px #57732d;
+  color: white;
+}
+
+.div-img img {
+  width: 250px;
+  height: 250px;
+}
+
+.card-text-comofunciona {
+  color: #573c23;
+}
+
+.card-altura-largura {
+  height: 30rem;
+  max-height: 20rem;
+  min-height: 22rem;
+  max-width: 20rem;
+}
+
+.card-img-top {
+  max-width: 100%;
+  width: 350px;
+  height: 200px;
+  object-fit: cover;
+}

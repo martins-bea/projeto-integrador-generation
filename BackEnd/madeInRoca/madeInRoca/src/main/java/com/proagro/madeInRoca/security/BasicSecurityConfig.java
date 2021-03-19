@@ -9,7 +9,9 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
+
+import com.proagro.madeInRoca.service.EmailService;
+import com.proagro.madeInRoca.service.SmtpEmailService;
 
 @EnableWebSecurity
 public class BasicSecurityConfig extends WebSecurityConfigurerAdapter {
@@ -23,14 +25,25 @@ public class BasicSecurityConfig extends WebSecurityConfigurerAdapter {
 	}
 
 	@Bean
-	public PasswordEncoder passwordEncoder() {
+	public BCryptPasswordEncoder bCryptPasswordEncoder() {
 		return new BCryptPasswordEncoder();
+	}
+	
+	@Bean
+	public EmailService emailService() {
+		return new SmtpEmailService();
 	}
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests().antMatchers("/usuarios/logar").permitAll().antMatchers("/usuarios/cadastrar")
-		.permitAll().anyRequest().authenticated().and().httpBasic().and().sessionManagement()
-		.sessionCreationPolicy(SessionCreationPolicy.STATELESS).and().cors().and().csrf().disable();
+		http.authorizeRequests().
+		antMatchers("/usuarios/logar").permitAll().
+		antMatchers("/**").permitAll().
+		antMatchers("/usuarios/cadastrar").permitAll().
+		anyRequest().authenticated().and().
+		httpBasic().and().sessionManagement()
+		.sessionCreationPolicy(SessionCreationPolicy.STATELESS).
+		and().cors().and().
+		csrf().disable();
 	}
 }

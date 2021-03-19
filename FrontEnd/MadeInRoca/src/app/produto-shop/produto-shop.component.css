@@ -1,0 +1,103 @@
+*{
+  color: #402222;
+}
+
+.img-product-single {
+  border: #c4c4c4 solid 1px;
+  border-radius: 5px;
+}
+
+h5 {
+  font-family: "Public Sans", sans-serif;
+}
+.title-prod-rel {
+  margin-left: 30px;
+}
+
+.descricao-produto {
+  font-family: "Public Sans", sans-serif;
+  font-style: italic;
+  max-width: 600px;
+}
+
+.btn-comprar {
+  background-color: #57732d;
+  border: solid 2px #57732d;
+  color: white;
+}
+
+.efeitoFruta:hover {
+  filter: drop-shadow(10px 10px 5px rgba(0, 0, 0, 0.5));
+}
+
+.efeitoFruta {
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.btn-comprar-carousel {
+  background-color: #57732d;
+  border: solid 2px #57732d;
+  color: white;
+}
+
+.product-single {
+  display: flex;
+  min-width: 350px;
+  max-width: 350px;
+}
+.carousel-control-next,
+.carousel-control-prev {
+  height: 80px;
+  width: auto;
+  top: 50%;
+}
+
+.btn-next,
+.btn-prev {
+  border-radius: 100px;
+  background-color: rgba(97, 95, 95, 0.384);
+  height: 25px;
+}
+
+.form-group {
+  border-radius: 5px;
+}
+
+.carousel-promo {
+  height: 80px;
+  width: auto;
+  position: absolute;
+  top: 30%;
+}
+
+.color-green {
+  color: #0e5411;
+}
+
+.btn {
+  color: #fff;
+}
+
+h5 a{
+  color: #774040;
+}
+
+h5 a:hover{
+  text-decoration: underline;
+}
+
+@media (max-width: 350px) {
+  .product-single {
+    min-width: 320px;
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 280px) {
+  .product-single {
+    display: flex;
+    min-width: 275px;
+    max-width: 275px;
+  }
+}
